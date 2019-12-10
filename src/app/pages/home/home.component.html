@@ -1,0 +1,12 @@
+<div class="container mt-5">
+    <div class="row">
+    <div class="col-3" *ngFor="let tweet of this.noticiasTweets?.tweets">
+    <app-noticia
+    [id]= "tweet.id"
+    [imagen]= "tweet.extended_entities?.media[0]?.media_url_https"
+    [created]="tweet.created_at"
+    [fullText]="tweet.full_text"
+    (openTweet)="touchParent($event)"></app-noticia>
+  </div>
+  </div>
+  </div>
